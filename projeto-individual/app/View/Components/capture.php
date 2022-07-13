@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class p_eletric extends Component
+class capture extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class p_eletric extends Component
      */
     public function render()
     {
-        return view('components.p-eletric');
+        return view('components.capture');
     }
 }

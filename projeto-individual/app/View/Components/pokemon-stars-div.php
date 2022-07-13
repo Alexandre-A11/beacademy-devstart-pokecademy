@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class pokemon-stars-div extends Component
+class pokemon_stars_div extends Component
 {
     /**
      * Create a new component instance.

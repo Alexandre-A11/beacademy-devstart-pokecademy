@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class pokemon-stats extends Component
+class pokemon_stats extends Component
 {
     /**
      * Create a new component instance.

@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class pokemon-h1-name extends Component
+class pokemon_h1_name extends Component
 {
     /**
      * Create a new component instance.

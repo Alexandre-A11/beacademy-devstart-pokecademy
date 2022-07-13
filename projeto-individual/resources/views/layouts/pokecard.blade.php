@@ -9,16 +9,16 @@
         <x-pokemon-type>Tipo</x-pokemon-type>
         <!-- Conteúdo -->
         <x-pokemon-content>
-            <x-pokemon-h1-name>Nome</x-pokemon-h1-name>
+            <x-pokemon-h1-name>{{ $pokemon->name }}</x-pokemon-h1-name>
             <x-pokemon-stats>
-                <x-pokemon-stats-attribute>Power: ??</x-pokemon-stats-attribute>
-                <x-pokemon-stats-attribute>Damage: ??</x-pokemon-stats-attribute>
-                <x-pokemon-stats-attribute>Attack: ??</x-pokemon-stats-attribute>
-                <x-pokemon-stats-attribute>Healthy: ??</x-pokemon-stats-attribute>
-                <x-pokemon-stats-attribute>Description: ??</x-pokemon-stats-attribute>
-                <x-pokemon-stats-attribute>Trainer: ??</x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Power: {{ $pokemon->power }}</x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Damage: {{ $pokemon->damage }} </x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Attack: {{ $pokemon->attack }} </x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Healthy: {{ $pokemon->healthy }} </x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Description: {{ $pokemon->description }}</x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Trainer: {{ $pokemon->user->name }} </x-pokemon-stats-attribute>
                 <x-pokemon-stars-div>
-                    @for ($i = 0; $i < 5; $i++)
+                    @for ($i = 0; $i < $pokemon->stars ; $i++)
                         <x-p-eletric />
                     @endfor
                 </x-pokemon-stars-div>

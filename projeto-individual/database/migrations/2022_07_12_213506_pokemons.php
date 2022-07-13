@@ -19,13 +19,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('image')->nullable();
-            $table->string('description');
-            $table->string('power');
-            $table->string('damage');
-            $table->string('attack');
-            $table->string('healthy');
-            $table->string('pokedex_id');
+            $table->integer('power');
+            $table->integer('attack');
+            $table->integer('damage');
+            $table->integer('defense');
+            $table->integer('healthy');
             $table->integer('stars');
+            $table->integer('pokedex_id');
         });
     }
 
