@@ -13,8 +13,15 @@
             <x-pokemon-stats>
                 <x-pokemon-stats-attribute>Power: ??</x-pokemon-stats-attribute>
                 <x-pokemon-stats-attribute>Damage: ??</x-pokemon-stats-attribute>
-                <x-pokemon-stats-attribute>Power: ??</x-pokemon-stats-attribute>
                 <x-pokemon-stats-attribute>Attack: ??</x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Healthy: ??</x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Description: ??</x-pokemon-stats-attribute>
+                <x-pokemon-stats-attribute>Trainer: ??</x-pokemon-stats-attribute>
+                <x-pokemon-stars-div>
+                    @for ($i = 0; $i < 5; $i++)
+                        <x-p-eletric />
+                    @endfor
+                </x-pokemon-stars-div>
             </x-pokemon-stats>
             <x-pokemon-h2-logo>Logo</x-pokemon-h2-logo>
         </x-pokemon-content>
