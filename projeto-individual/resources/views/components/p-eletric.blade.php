@@ -23,6 +23,9 @@
     }elseif ($type === 'Fantasma'){
         $icon = 'bg-ghost';
         $background = 'bg-purple-400';
+    }elseif ($type === 'Inseto'){
+        $icon = 'bg-bug';
+        $background = 'bg-lime-400';
     }else {
         $icon = "fa-question text-white";
         $background = 'bg-black';

@@ -15,6 +15,8 @@ elseif ($type === 'Fantasma')
     $background = 'bg-purple-500';
 elseif ($type === 'Voador')
     $background = 'bg-sky-500';
+elseif ($type === 'Inseto')
+    $background = 'bg-lime-500';
 else
     $background = 'bg-black';
 @endphp
