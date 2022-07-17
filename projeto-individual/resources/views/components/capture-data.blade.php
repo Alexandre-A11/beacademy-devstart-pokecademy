@@ -11,7 +11,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('pokemon.capture') }}">
+        <form method="POST" action="{{ route('pokemon.capture') }}" enctype="multipart/form-data">
             @csrf
 
             <!-- Pokemon Name -->
@@ -63,9 +63,9 @@
                         <label for="flying" class="ml-2 text-sm font-medium text-gray-900">Voador</label>
                     </div>
                     <div class="flex items-center mr-2.5">
-                        <input id="dragon" type="radio" value="Dragão" name="type"
-                            class="w-4 h-4 text-sky-800 bg-gray-100 border-gray-300 focus:ring-sky-700 dark:focus:ring-sky-800 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="dragon" class="ml-2 text-sm font-medium text-gray-900">Dragão</label>
+                        <input id="eletric" type="radio" value="Elétrico" name="type"
+                            class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 focus:ring-amber-500 dark:focus:ring-amber-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="eletric" class="ml-2 text-sm font-medium text-gray-900">Elétrico</label>
                     </div>
                     <div class="flex items-center mr-4">
                         <input id="insect" type="radio" value="Inseto" name="type"

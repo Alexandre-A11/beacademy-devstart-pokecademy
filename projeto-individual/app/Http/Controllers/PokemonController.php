@@ -22,6 +22,7 @@ class PokemonController extends Controller
         $data = $request->all();
         $data['trainer_id'] = auth()->user()->id;
         $data['pokedex_id'] = $request['pokedex'];
+        $data['image'] = $request->file('image')->store('pokemon', 'public');
         
         $this->pokemon->create($data);
         

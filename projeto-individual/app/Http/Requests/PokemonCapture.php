@@ -27,7 +27,7 @@ class PokemonCapture extends FormRequest
         $rules = [
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
-            'image' => 'file|mimes:png,svg|nullable|string|max:255',
+            'image' => 'file|mimes:png,svg|nullable',
             'power' => 'required|integer',
             'attack' => 'required|integer',
             'damage' => 'required|integer',
