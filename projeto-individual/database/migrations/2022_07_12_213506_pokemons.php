@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pokemons', function (Blueprint $table){
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->foreignId('trainer_id')->constrained('users')->nullable();
             $table->string('name');
             $table->string('type');
             $table->string('image')->nullable();

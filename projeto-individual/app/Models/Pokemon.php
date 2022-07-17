@@ -8,24 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Pokemon extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'pokemons';
 
     protected $fillable = [
         'name',
         'type',
         'image',
-        'description',
         'power',
-        'damage',
         'attack',
+        'damage',
+        'defense',
         'healthy',
-        'pokedex_id',
         'stars',
-        'user_id',
+        'pokedex_id',
+        'trainer_id',
     ];
     
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'trainer_id');
     }
 }
