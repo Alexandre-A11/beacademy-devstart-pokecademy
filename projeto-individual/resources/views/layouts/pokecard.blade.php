@@ -1,4 +1,11 @@
 <x-pokemon-card-container>
+    <form action="{{ route('pokemon.release', $pokemon->id) }}" method="POST" class="d-inline">
+        @method("DELETE")
+        @csrf
+        <x-button class="hidden bg-red-300 hover:bg-red-500 absolute group-hover:block -translate-x-full translate-y-8 font-extrabold">
+            Soltar
+        </x-button>
+    </form>
     <x-pokemon-card>
         <!-- Imagem -->
         <div class="grid justify-items-center h-1/2 pt-5 rounded-md">

@@ -15,7 +15,7 @@ class PokemonController extends Controller
     }
 
     public function show_capture(){
-        return view('capture');
+        return view('pokemon.capture');
     }
 
     public function capture(PokemonCapture $request){
@@ -26,6 +26,15 @@ class PokemonController extends Controller
         
         $this->pokemon->create($data);
         
+        return redirect()->route('dashboard')->with('success', 'Pokémon capturado com sucesso!');
+    }
+
+    public function delete($id){
+        if (!$pokemon = $this->pokemon->find($id)){
+            return redirect()->route('dashboard')->with('error', 'Pokémon não encontrado');
+        };
+        
+        $pokemon->delete();
         return redirect()->route('dashboard');
     }
 }
