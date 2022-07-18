@@ -29,6 +29,19 @@ class PokemonController extends Controller
         return redirect()->route('dashboard')->with('success', 'Pokémon capturado com sucesso!');
     }
 
+    public function edit($id){
+        $pokemon = $this->pokemon->find($id);
+        return view('pokemon.edit', compact('pokemon'));
+    }
+    
+    public function update(PokemonCapture $request, $id){
+        $data = $request->all();
+        $data['image'] = $request->file('image')->store('pokemon', 'public');
+        $this->pokemon->find($id)->update($data);
+        
+        return redirect()->route('dashboard')->with('success', 'Pokémon alterado com sucesso!');
+    }
+
     public function delete($id){
         if (!$pokemon = $this->pokemon->find($id)){
             return redirect()->route('dashboard')->with('error', 'Pokémon não encontrado');

@@ -1,11 +1,19 @@
 <x-pokemon-card-container>
-    <form action="{{ route('pokemon.release', $pokemon->id) }}" method="POST" class="d-inline">
-        @method("DELETE")
-        @csrf
-        <x-button class="hidden bg-red-300 hover:bg-red-500 absolute group-hover:block -translate-x-full translate-y-8 font-extrabold">
-            Soltar
-        </x-button>
-    </form>
+    <div class="absolute">
+        <a href="{{ route('pokemon.edit', $pokemon->id) }}">
+            <x-button class="hidden bg-amber-300 hover:bg-amber-500 group-hover:block -translate-x-full translate-y-4 font-extrabold">
+                Editar
+            </x-button>
+        </a>
+        <form action="{{ route('pokemon.release', $pokemon->id) }}" method="POST" class="d-inline">
+            @method("DELETE")
+            @csrf
+            <x-button class="hidden bg-red-300 hover:bg-red-500 group-hover:block -translate-x-full translate-y-8 font-extrabold">
+                Soltar
+            </x-button>
+
+        </form>
+    </div>
     <x-pokemon-card>
         <!-- Imagem -->
         <div class="grid justify-items-center h-1/2 pt-5 rounded-md">
