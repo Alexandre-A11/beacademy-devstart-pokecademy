@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TrainerUpdate;
 use App\Models\Pokemon;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,5 +19,25 @@ class TrainerController extends Controller
         $pokemons = $this->pokemon->all();
 
         return view('dashboard', compact('pokemons'));
+    }
+
+    public function edit($id){
+        $trainer = $this->user->find($id);
+        return view('trainer.edit', compact('trainer'));
+    }
+
+    public function update(TrainerUpdate $request, $id){
+        $data = $request->all();
+        if ($request->hasFile('image')){
+            $data['image'] = $request->file('image')->store('trainers', 'public');
+        }
+
+        if ($request->has('password')){
+            $data['password'] = bcrypt($data['password']);
+        }
+        
+        $this->user->find($id)->update($data);
+
+        return redirect()->route('dashboard')->with('success', 'Dados alterados com sucesso!');
     }
 }
