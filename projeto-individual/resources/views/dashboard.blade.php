@@ -9,8 +9,8 @@
                 </a>
             </div>
 
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200 flex flex-wrap">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg grid items-start justify-items-center">
+                <div class="py-6 bg-white border-b border-gray-200 flex flex-wrap justify-start w-5/6">
                     @foreach ($pokemons as $pokemon)
                     @include('layouts.pokecard')
                     @endforeach
