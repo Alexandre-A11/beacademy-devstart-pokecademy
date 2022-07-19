@@ -40,4 +40,19 @@ class TrainerController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Dados alterados com sucesso!');
     }
+
+    public function show_trainers(){
+        $trainers = $this->user->all();
+        return view('dashboard', compact('trainers'));
+    }
+
+    public function delete($id){
+        if ($this->user->find($id)->pokemons->count() > 0){
+            return redirect()->route('show.trainers')->with('error', 'Não é possível excluir um treinador que possui Pokémons!');
+        }
+        
+        $this->user->find($id)->delete();
+
+        return redirect()->route('show.trainers')->with('success', 'Treinador deletado com sucesso!');
+    }
 }
