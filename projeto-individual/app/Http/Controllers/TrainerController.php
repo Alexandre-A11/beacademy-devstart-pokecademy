@@ -27,13 +27,13 @@ class TrainerController extends Controller
     }
 
     public function update(TrainerUpdate $request, $id){
-        $data = $request->all();
+        $data = $request->except('password');
         if ($request->hasFile('image')){
             $data['image'] = $request->file('image')->store('trainers', 'public');
         }
-
-        if ($request->has('password')){
-            $data['password'] = bcrypt($data['password']);
+        
+        if ($request->password){
+            $data['password'] = bcrypt($request->password);
         }
         
         $this->user->find($id)->update($data);
