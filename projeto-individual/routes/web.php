@@ -9,9 +9,9 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
 Route::get('/', [TrainerController::class, 'index'])->name('dashboard');
-Route::get('/trainer/{id}', [TrainerController::class, 'edit'])->name('trainer.edit');
+Route::get('/trainer/{id}', [TrainerController::class, 'edit'])->middleware(['verify_id'])->name('trainer.edit');
 Route::put('/trainer/{id}', [TrainerController::class, 'update'])->name('trainer.update');
-Route::get('/trainers', [TrainerController::class, 'show_trainers'])->name('show.trainers');
+Route::get('/trainers', [TrainerController::class, 'show_trainers'])->middleware(['admin'])->name('show.trainers');
 Route::delete('/trainer/{id}', [TrainerController::class, 'delete'])->name('trainer.delete');
 
 Route::get('/capture', [PokemonController::class, 'show_capture'])->name('show.capture');
