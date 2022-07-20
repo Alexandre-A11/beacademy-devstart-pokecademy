@@ -14,7 +14,7 @@ $background = 'bg-green-400';
 }elseif ($type === 'Elétrico'){
 $icon = 'fa-bolt';
 $background = 'bg-amber-400';
-}elseif ($type === 'Rock'){
+}elseif ($type === 'Pedra'){
 $icon = "fa-hill-rockslide";
 $background = 'bg-stone-400';
 }elseif ($type === 'Voador'){

@@ -23,6 +23,6 @@ class p_eletric extends Component
      */
     public function render()
     {
-        return view('components.p-eletric');
+        return view('components.p-type-icon');
     }
 }

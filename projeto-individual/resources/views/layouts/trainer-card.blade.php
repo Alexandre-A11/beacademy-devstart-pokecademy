@@ -2,11 +2,11 @@
     <div class="px-6">
         <div class="flex flex-wrap justify-center">
             <div class="w-full flex justify-center">
-                <div class="relative -mb-24git">
+                <div class="relative">
                     <img src="{{ asset("storage/{$trainer->image}") }}" class="rounded-full w-40 h-40 object-cover" />
                 </div>
             </div>
-            <div class="w-full text-center mt-20">
+            <div class="w-full text-center">
                 <div class="flex justify-center lg:pt-4 pt-8 pb-0">
                     <div class="p-3 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">{{ $trainer->pokemons->count() }}</span>

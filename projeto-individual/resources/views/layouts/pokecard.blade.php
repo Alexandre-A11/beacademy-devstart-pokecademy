@@ -1,14 +1,14 @@
 <x-pokemon-card-container>
-    <div class="absolute">
+    <div class="absolute -translate-x-[107%] translate-y-1/4 h-1/4 bg-slate-700 rounded-md">
         <a href="{{ route('pokemon.edit', $pokemon->id) }}">
-            <x-button class="hidden bg-yellow-500 hover:bg-yellow-400 group-hover:block -translate-x-full translate-y-4 font-extrabold">
+            <x-button class="hidden mx-4 bg-yellow-500 hover:bg-yellow-400 group-hover:block translate-y-4 font-extrabold">
                 Editar
             </x-button>
         </a>
         <form action="{{ route('pokemon.release', $pokemon->id) }}" method="POST" class="inline">
             @method("DELETE")
             @csrf
-            <x-button class="hidden bg-red-500 hover:bg-red-400 group-hover:block -translate-x-full translate-y-8 font-extrabold">
+            <x-button class="hidden mx-4 bg-red-500 hover:bg-red-400 group-hover:block  translate-y-8 font-extrabold">
                 Soltar
             </x-button>
 
@@ -35,8 +35,8 @@
                 <x-pokemon-stats-attribute>Defense: {{ $pokemon->defense }}</x-pokemon-stats-attribute>
                 <x-pokemon-stats-attribute>Trainer: {{ $pokemon->user->name }}</x-pokemon-stats-attribute>
                 <x-pokemon-stars-div>
-                    @for ($i = 0; $i < $pokemon->stars ; $i++)
-                        <x-p-eletric :type="$pokemon->type" />
+                    @for ($i = 0; $i < $pokemon->stars; $i++)
+                        <x-p-type-icon :type="$pokemon->type" />
                         @endfor
                 </x-pokemon-stars-div>
             </x-pokemon-stats>
