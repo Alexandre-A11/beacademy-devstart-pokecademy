@@ -16,12 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-
+                @if (Auth::user()->isAdmin)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('show.trainers')" :active="request()->routeIs('show.trainers')">
                         {{ __('Lista de Treinadores') }}
                     </x-nav-link>
                 </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->

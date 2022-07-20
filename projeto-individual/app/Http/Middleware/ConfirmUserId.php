@@ -19,8 +19,8 @@ class ConfirmUserId
     {
         $id = $request->route('id');
  
-        if (!Auth::user()->is_admin && Auth::user()->id != $id){
-            return abort(403);
+        if (!Auth::user()->isAdmin && Auth::user()->id != $id){
+            return redirect()->back();
         }
 
         return $next($request);
