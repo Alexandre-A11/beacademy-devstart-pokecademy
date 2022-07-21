@@ -14,44 +14,44 @@
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Nome')" />
+                <x-label for="name" class="text-white" :value="__('Nome')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full bg-blue-300 focus:border-primary focus:ring focus:ring-primary" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="email" class="text-white" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="block mt-1 w-full bg-blue-300 focus:border-primary focus:ring focus:ring-primary" type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Senha')" />
+                <x-label for="password" class="text-white" :value="__('Senha')" />
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full bg-blue-300 focus:border-primary focus:ring focus:ring-primary" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirmar senha')" />
+                <x-label for="password_confirmation" class="text-white" :value="__('Confirmar senha')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                <x-input id="password_confirmation" class="block mt-1 w-full bg-blue-300 focus:border-primary focus:ring focus:ring-primary" type="password" name="password_confirmation" required />
             </div>
             <!-- Image -->
             <div class="mt-4">
-                <x-label for="image" :value="__('Imagem')" />
-                <x-input id="image" class="border-2 border-slate-500 block mt-1 w-full bg-slate-400" type="file" name="image" />
+                <x-label for="image" class="text-white" :value="__('Imagem')" />
+                <x-input id="image" class="block mt-1 w-full bg-blue-300 focus:border-primary focus:outline-none focus:ring focus:ring-primary" type="file" name="image" />
             </div>
 
             <!-- Submit -->
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="underline text-sm text-gray-300 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Já possui cadastro?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 bg-green-600 hover:bg-green-500 focus:bg-green-500 active:bg-green-500 ">
                     {{ __('Cadastrar') }}
                 </x-button>
             </div>
