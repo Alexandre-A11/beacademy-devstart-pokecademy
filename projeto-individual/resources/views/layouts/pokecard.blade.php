@@ -1,5 +1,5 @@
 <x-pokemon-card-container :type="$pokemon->type">
-    <div class="absolute -translate-x-[107%] translate-y-1/4 h-1/4 group-hover:px-10 bg-slate-700 rounded-md">
+    <div class="absolute duration-1000 opacity-0 ease-in-out group-hover:opacity-100 -translate-x-[107%] translate-y-1/4 h-1/4 group-hover:px-10 bg-slate-700 rounded-md">
 
         <div class="hidden group-hover:block translate-y-1/4 mb-6">
             <img src="{{ asset("storage/{$pokemon->user->image}") }}" class="rounded-full w-20 h-20 object-cover" />
@@ -9,14 +9,14 @@
         </div>
 
         <a href="{{ route('pokemon.edit', $pokemon->id) }}">
-            <x-button class="hidden bg-yellow-500 hover:bg-yellow-400 group-hover:block translate-y-2/4 font-extrabold">
+            <x-button class="hidden group-hover:block  bg-yellow-500 hover:bg-yellow-400 translate-y-2/4 font-extrabold">
                 Editar
             </x-button>
         </a>
         <form action="{{ route('pokemon.release', $pokemon->id) }}" method="POST" class="inline">
             @method("DELETE")
             @csrf
-            <x-button class="hidden bg-red-500 hover:bg-red-400 group-hover:block translate-y-3/4 font-extrabold">
+            <x-button class="hidden group-hover:block bg-red-500 hover:bg-red-400 translate-y-3/4 font-extrabold">
                 Soltar
             </x-button>
 
@@ -36,7 +36,7 @@
         <x-pokemon-content>
             <x-pokemon-h1-name>{{ $pokemon->name }}</x-pokemon-h1-name>
             <x-pokemon-stats>
-                <div class="flex mt-6">
+                <div class="flex mt-1">
                     <x-pokemon-stats-attribute>Ataque: <span class="font-bold">{{ $pokemon->attack }}</span></x-pokemon-stats-attribute>
                 </div>
                 <div class="flex justify-between mr-10 mt-1">
@@ -53,7 +53,7 @@
                     </div>
                 </x-pokemon-stats-attribute>
                 <x-pokemon-stats-attribute>Treinador: {{ $pokemon->user->name }}</x-pokemon-stats-attribute>
-                <x-pokemon-stars-div class="mt-5">
+                <x-pokemon-stars-div class="mt-2">
                     @for ($i = 0; $i < $pokemon->stars; $i++)
                         <x-p-type-icon :type="$pokemon->type" />
                         @endfor
