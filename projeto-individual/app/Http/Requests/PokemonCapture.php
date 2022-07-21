@@ -29,14 +29,19 @@ class PokemonCapture extends FormRequest
             'type' => 'required|string|max:255',
             'image' => 'required|file|mimes:png,svg',
             'power' => 'required|integer',
-            'attack' => 'required|integer',
-            'damage' => 'required|integer',
+            'attack' => 'required|string',
             'defense' => 'required|integer',
             'healthy' => 'required|integer',
+            'weakness' => 'required|integer',
+            'weakness_type' => 'required|string',
             'stars' => 'required|integer',
             'pokedex_id' => 'nullable|integer',
-            'trainer_id' => 'nullable|integer',
         ];
+
+        if ($this->method() === "PUT"){
+            $rules['image'] = 'nullable|file|mimes:png,svg';
+            $rules['type'] = 'nullable';
+        }
         
         return $rules;
     }

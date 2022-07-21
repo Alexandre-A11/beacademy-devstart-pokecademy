@@ -18,12 +18,13 @@ return new class extends Migration
             $table->foreignId('trainer_id')->constrained('users')->nullable();
             $table->string('name');
             $table->string('type');
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->integer('power');
-            $table->integer('attack');
-            $table->integer('damage');
+            $table->string('attack');
             $table->integer('defense');
             $table->integer('healthy');
+            $table->integer('weakness');
+            $table->string('weakness_type');
             $table->integer('stars');
             $table->integer('pokedex_id');
         });

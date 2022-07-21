@@ -36,7 +36,15 @@ class PokemonController extends Controller
     
     public function update(PokemonCapture $request, $id){
         $data = $request->all();
-        $data['image'] = $request->file('image')->store('pokemon', 'public');
+        
+        if ($request->image){
+            $data['image'] = $request->file('image')->store('pokemon', 'public');
+        }
+
+        if ($request->type){
+            $data['type'] = $request->type;
+        }
+
         $this->pokemon->find($id)->update($data);
         
         return redirect()->route('dashboard')->with('success', 'Pokémon alterado com sucesso!');

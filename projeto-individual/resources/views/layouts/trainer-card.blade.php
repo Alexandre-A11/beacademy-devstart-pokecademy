@@ -20,6 +20,11 @@
             <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
                 {{$trainer->email}}
             </div>
+            @if ($trainer->isAdmin)
+            <div class="grid justify-items-center -mb-2">
+                <h4 class="text-xs text-slate-400 absolute font-bold leading-normal"> Administrador </h4>
+            </div>
+            @endif
             <div class="text-right mt-2 text-slate-700 text-sm font-bold leading-normal"># {{ $trainer->id }}</div>
         </div>
         <div class="mt-6 py-6 border-t border-slate-200 text-center">

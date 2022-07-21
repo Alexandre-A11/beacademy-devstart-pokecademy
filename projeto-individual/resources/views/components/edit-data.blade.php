@@ -43,9 +43,8 @@
                         <input id="ghost" type="radio" value="Fantasma" name="type" class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="ghost" class="ml-2 text-sm font-medium text-gray-900">Fantasma</label>
                     </div>
-
-
                 </div>
+
                 <div class="flex flex-wrap mt-1">
                     <div class="flex items-center mr-2.5">
                         <input id="rock" type="radio" value="Pedra" name="type" class="w-4 h-4 text-stone-600 bg-gray-100 border-gray-300 focus:ring-stone-500 dark:focus:ring-stone-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -66,24 +65,17 @@
                 </div>
             </div>
 
-
-
             <div class="mt-4 flex text-center">
-                <!-- Pokemon Power -->
-                <div class="mr-4">
-                    <x-label for="power" :value="__('Poder')" />
-                    <x-input id="power" class="block mt-1 w-full" type="number" name="power" :value="$pokemon->power" />
-                </div>
-
                 <!-- Pokemon Attack -->
                 <div class="mr-4">
                     <x-label for="attack" :value="__('Ataque')" />
-                    <x-input id="attack" min="0" class="block mt-1 w-full" type="number" name="attack" :value="$pokemon->attack" />
+                    <x-input id="attack" class="block mt-1 w-full" type="text" name="attack" :value="$pokemon->attack" required />
                 </div>
-                <!-- Pokemon Damage -->
+
+                <!-- Pokemon Power -->
                 <div class="mr-4">
-                    <x-label for="damage" :value="__('Dano')" />
-                    <x-input id="damage" min="0" class="block mt-1 w-full" type="number" name="damage" :value="$pokemon->damage" />
+                    <x-label for="power" :value="__('Poder')" />
+                    <x-input id="power" class="block mt-1 w-full" type="number" name="power" :value="$pokemon->power" required />
                 </div>
             </div>
 
@@ -106,6 +98,30 @@
                     <x-input id="pokedex" min="1" class="block mt-1 w-full" type="number" name="pokedex" :value="$pokemon->pokedex_id" />
                 </div>
             </div>
+
+            <div class="mt-4 text-center flex justify-center">
+                <!-- Pokemon Weakness Type -->
+                <div class="mr-4">
+                    <x-label for="weakness_type">Fraco Contra:</x-label>
+                    <select id="weakness_type" name="weakness_type" :value="$pokemon->weakness_type" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="Fogo">Fogo</option>
+                        <option value="Água">Água</option>
+                        <option value="Planta">Planta</option>
+                        <option value="Elétrico">Elétrico</option>
+                        <option value="Pedra">Pedra</option>
+                        <option value="Voador">Voador</option>
+                        <option value="Fantasma">Fantasma</option>
+                        <option value="Inseto">Inseto</option>
+                    </select>
+                </div>
+
+                <!-- Pokemon Weakness -->
+                <div class="mr-4">
+                    <x-label for="weakness" :value="__('Nível Fraqueza')" />
+                    <x-input id="weakness" min="1" max="5" class="block mt-1 w-full" type="number" name="weakness" :value="$pokemon->weakness" required />
+                </div>
+            </div>
+
             <!-- Pokemon Stars -->
             <div class="mt-4 grid justify-items-center">
                 <x-label for="stars" :value="__('Estrelas')" />
