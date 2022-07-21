@@ -1,7 +1,7 @@
 <x-pokemon-card-container :type="$pokemon->type">
-    <div class="absolute duration-1000 opacity-0 ease-in-out group-hover:opacity-100 -translate-x-[107%] translate-y-1/4 h-1/4 group-hover:px-10 bg-slate-700 rounded-md">
+    <div class="absolute duration-1000 opacity-0 ease-in-out group-hover:opacity-100 -translate-x-[107%] translate-y-1/4 h-1/4 group-hover:px-10 bg-secondary rounded-md shadow-black shadow-2xl">
 
-        <div class="hidden group-hover:block translate-y-1/4 mb-6">
+        <div class="hidden group-hover:block translate-y-1/4 mb-6 -mt-3">
             <img src="{{ asset("storage/{$pokemon->user->image}") }}" class="rounded-full w-20 h-20 object-cover" />
             <div class="font-bold text-xs text-white text-center my-2">
                 {{ $pokemon->user->name }}

@@ -5,3 +5,9 @@
 .tramontina {
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 }
+
+:root {
+  --primary-color: #071f46;
+  --primary-color-strong: #0c1c3d;
+  --secondary-color: #163c77;
+}

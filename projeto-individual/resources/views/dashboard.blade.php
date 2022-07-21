@@ -25,14 +25,14 @@
             @endif
             <div class="flex justify-end mb-5">
                 <a href="{{ route('show.capture') }}">
-                    <x-button class="ml-4">
+                    <x-button class="ml-4 bg-green-600 hover:bg-green-500">
                         {{ __('Caçar') }}
                     </x-button>
                 </a>
             </div>
 
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg grid items-start justify-items-center">
-                <div class="py-6 bg-white border-b border-gray-200 flex flex-wrap justify-start w-5/6">
+            <div class="bg-secondary overflow-hidden shadow-sm sm:rounded-lg grid items-start justify-items-center">
+                <div class="py-6 bg-secondary flex flex-wrap justify-start w-5/6">
                     @if (request()->routeIs('dashboard'))
                     @foreach ($pokemons as $pokemon)
                     @include('layouts.pokecard')

@@ -14,6 +14,11 @@ module.exports = {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
             visibility: ["group-hover"],
+            colors: {
+                primary: "var(--primary-color)",
+                primaryStrong: "var(--primary-color-strong)",
+                secondary: "var(--secondary-color)",
+            },
         },
     },
 
