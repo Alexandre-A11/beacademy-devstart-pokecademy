@@ -1,9 +1,9 @@
-<div class="w-80 mx-2 bg-white mb-6 shadow-lg rounded-xl mt-16">
+<div class="w-80 mx-2 bg-primary mb-6 shadow-2xl rounded-xl mt-16">
     <div class="px-6">
         <div class="flex flex-wrap justify-center">
-            <div class="w-full flex justify-center">
+            <div class="w-full flex justify-center mt-6">
                 <div class="relative">
-                    <img src="{{ asset("storage/{$trainer->image}") }}" class="rounded-full w-40 h-40 object-cover" />
+                    <img src="{{ asset("storage/{$trainer->image}") }}" class="rounded-full w-40 h-40 object-cover border-4 border-secondary" />
                 </div>
             </div>
             <div class="w-full text-center">

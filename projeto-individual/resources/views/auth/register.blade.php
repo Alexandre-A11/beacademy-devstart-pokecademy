@@ -51,7 +51,7 @@
                     {{ __('Já possui cadastro?') }}
                 </a>
 
-                <x-button class="ml-4 bg-green-600 hover:bg-green-500 focus:bg-green-500 active:bg-green-500 ">
+                <x-button class="ml-4 bg-green-600 hover:bg-green-500 focus:bg-green-500 active:bg-green-500">
                     {{ __('Cadastrar') }}
                 </x-button>
             </div>
