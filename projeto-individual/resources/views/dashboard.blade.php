@@ -37,15 +37,19 @@
                     @foreach ($pokemons as $pokemon)
                     @include('layouts.pokecard')
                     @endforeach
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-5">
+                        {{ $pokemons->links() }}
+                    </div>
                     @endif
 
                     @if (request()->routeIs('show.trainers'))
                     @foreach ($trainers as $trainer)
                     @include('layouts.trainer-card')
+                    <!-- Pagination -->
+                    {{ $trainers->links() }}
                     @endforeach
                     @endif
-
-
                 </div>
             </div>
         </div>

@@ -59,7 +59,7 @@
                         @endfor
                 </x-pokemon-stars-div>
             </x-pokemon-stats>
-            <x-pokemon-h2-logo>Logo</x-pokemon-h2-logo>
+            <x-pokemon-logo />
         </x-pokemon-content>
     </x-pokemon-card>
 </x-pokemon-card-container>

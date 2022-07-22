@@ -16,7 +16,7 @@ class TrainerController extends Controller
     }
 
     public function index(){
-        $pokemons = $this->pokemon->all();
+        $pokemons = Pokemon::paginate(6);
 
         return view('dashboard', compact('pokemons'));
     }
@@ -42,7 +42,7 @@ class TrainerController extends Controller
     }
 
     public function show_trainers(){
-        $trainers = $this->user->all();
+        $trainers = User::paginate(6);
         return view('dashboard', compact('trainers'));
     }
 
