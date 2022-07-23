@@ -47,4 +47,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pokemon::class, 'trainer_id');
     }
+
+    public function getTrainers(string $search = null){
+        $trainers = $this->where(function ($query) use ($search){
+            if ($search){
+                $query->where("name", "LIKE", "%{$search}%");
+                $query->orWhere("email", $search);
+            }
+        })->paginate(6);
+        return $trainers;
+    }
 }

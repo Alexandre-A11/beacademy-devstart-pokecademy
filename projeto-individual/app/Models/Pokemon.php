@@ -30,4 +30,16 @@ class Pokemon extends Model
     {
         return $this->belongsTo(User::class, 'trainer_id');
     }
+
+    public function getPokemons(string $search = null) {
+        $pokemons = $this->where(function ($query) use ($search) {
+            if ($search) {
+                $query->where("name", "LIKE", "%{$search}%");
+                $query->orWhere("type", $search);
+                $query->orWhere("pokedex_id", $search);
+            }
+        })->paginate(6);
+
+        return $pokemons;
+    }
 }

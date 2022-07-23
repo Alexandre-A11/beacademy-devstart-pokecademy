@@ -46,7 +46,7 @@
                 <a href="{{ route('register') }}" class="ml-3 bg-green-600 inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-500 focus:outline-none disabled:opacity-25 transition ease-in-out duration-150">
                     {{ __('Cadastrar') }}
                 </a>
-                <x-button class="ml-3">
+                <x-button class="ml-3 bg-blue-500 hover:bg-blue-400">
                     {{ __('Entrar') }}
                 </x-button>
             </div>

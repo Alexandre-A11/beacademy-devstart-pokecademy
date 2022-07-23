@@ -15,8 +15,8 @@ class TrainerController extends Controller
         $this->pokemon = $pokemon;
     }
 
-    public function index(){
-        $pokemons = Pokemon::paginate(6);
+    public function index(Request $request){
+        $pokemons = $this->pokemon->getPokemons($request->search ?? '');
 
         return view('dashboard', compact('pokemons'));
     }
@@ -41,8 +41,8 @@ class TrainerController extends Controller
         return redirect()->route('dashboard')->with('success', 'Dados alterados com sucesso!');
     }
 
-    public function show_trainers(){
-        $trainers = User::paginate(6);
+    public function show_trainers(Request $request){
+        $trainers = $this->user->getTrainers($request->search ?? '');
         return view('dashboard', compact('trainers'));
     }
 

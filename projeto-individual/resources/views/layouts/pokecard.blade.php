@@ -8,6 +8,7 @@
             </div>
         </div>
 
+        @if (Auth::user()->id == $pokemon->trainer_id || Auth::user()->isAdmin)
         <a href="{{ route('pokemon.edit', $pokemon->id) }}">
             <x-button class="hidden group-hover:block  bg-yellow-500 hover:bg-yellow-400 translate-y-2/4 font-extrabold">
                 Editar
@@ -21,6 +22,14 @@
             </x-button>
 
         </form>
+        @else
+        <x-button class="hidden group-hover:block  bg-gray-500 translate-y-2/4 font-extrabold">
+            Editar
+        </x-button>
+        <x-button class="hidden group-hover:block bg-gray-500 translate-y-3/4 font-extrabold">
+            Soltar
+        </x-button>
+        @endif
     </div>
     <x-pokemon-card>
         <!-- Imagem -->
