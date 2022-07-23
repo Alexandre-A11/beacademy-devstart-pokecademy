@@ -1,4 +1,4 @@
-<div class="w-80 mx-2 bg-primary mb-6 shadow-2xl rounded-xl mt-16">
+<div class="w-80 mx-2 bg-primary mb-6 shadow-2xl rounded-xl">
     <div class="px-6">
         <div class="flex flex-wrap justify-center">
             <div class="w-full flex justify-center mt-6">

@@ -31,15 +31,15 @@
                 </a>
             </div>
 
-            <div class="bg-secondary overflow-hidden shadow-sm sm:rounded-lg grid items-start justify-items-center">
-                <div class="py-6 bg-secondary flex flex-wrap justify-start w-5/6">
+            <div class="bg-secondary overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="py-6 bg-secondary flex flex-wrap justify-center">
                     @if (request()->routeIs('dashboard'))
                     @foreach ($pokemons as $pokemon)
                     @include('layouts.pokecard')
                     @endforeach
                     <!-- Pagination -->
-                    <div class="flex justify-center mt-5">
-                        {{ $pokemons->links() }}
+                    <div class="w-full grid justify-items-center">
+                        {{ $pokemons->links('vendor.pagination.tailwind') }}
                     </div>
                     @endif
 
@@ -47,7 +47,7 @@
                     @foreach ($trainers as $trainer)
                     @include('layouts.trainer-card')
                     <!-- Pagination -->
-                    {{ $trainers->links() }}
+                    {{ $trainers->links('vendor.pagination.tailwind') }}
                     @endforeach
                     @endif
                 </div>
