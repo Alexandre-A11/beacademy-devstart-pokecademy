@@ -9,6 +9,7 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
 Route::get('/', [TrainerController::class, 'index'])->name('dashboard');
+Route::get('/trainer/perfil/{id}', [TrainerController::class, 'show'])->name('trainer.show');
 Route::get('/trainer/{id}', [TrainerController::class, 'edit'])->middleware(['verify_id'])->name('trainer.edit');
 Route::put('/trainer/{id}', [TrainerController::class, 'update'])->name('trainer.update');
 Route::get('/trainers', [TrainerController::class, 'show_trainers'])->middleware(['admin'])->name('show.trainers');

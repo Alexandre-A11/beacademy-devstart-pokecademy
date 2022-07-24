@@ -24,6 +24,17 @@
             </div>
             @endif
             <div class="flex justify-end mb-5">
+                @if (Auth::user()->pokemons->count() > 0)
+                <a href="{{ route('trainer.show', Auth::user()->id) }}">
+                    <x-button class="ml-4 bg-red-400 hover:bg-red-300">
+                        {{ __('Meus Pokémons') }}
+                    </x-button>
+                </a>
+                @else
+                <x-button class="ml-4 bg-gray-400">
+                    {{ __('Meus Pokémons') }}
+                </x-button>
+                @endif
                 <a href="{{ route('show.capture') }}">
                     <x-button class="ml-4 bg-green-600 hover:bg-green-500">
                         {{ __('Caçar') }}
@@ -33,6 +44,8 @@
 
             <div class="bg-secondary overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="py-6 bg-secondary flex flex-wrap justify-center">
+
+                    {{-- Pokémon Cards --}}
                     @if (request()->routeIs('dashboard'))
                     @foreach ($pokemons as $pokemon)
                     @include('layouts.pokecard')
@@ -43,11 +56,19 @@
                     </div>
                     @endif
 
+                    {{-- Trainers Cards --}}
                     @if (request()->routeIs('show.trainers'))
                     @foreach ($trainers as $trainer)
                     @include('layouts.trainer-card')
                     <!-- Pagination -->
                     {{ $trainers->links('vendor.pagination.tailwind') }}
+                    @endforeach
+                    @endif
+
+                    {{-- Trainer Card --}}
+                    @if (request()->routeIs('trainer.show'))
+                    @foreach($trainer->pokemons as $pokemon)
+                    @include('layouts.pokecard')
                     @endforeach
                     @endif
                 </div>

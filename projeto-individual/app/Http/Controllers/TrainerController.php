@@ -41,6 +41,11 @@ class TrainerController extends Controller
         return redirect()->route('dashboard')->with('success', 'Dados alterados com sucesso!');
     }
 
+    public function show($id){
+        $trainer = $this->user->find($id);
+        return view('dashboard', compact('trainer'));
+    }
+
     public function show_trainers(Request $request){
         $trainers = $this->user->getTrainers($request->search ?? '');
         return view('dashboard', compact('trainers'));
