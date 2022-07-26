@@ -16,7 +16,7 @@ class PokemonTest extends TestCase
      *
      * @return void
      */
-    public function test_pokemon() {
+    public function test_create_pokemon() {
         $trainer =  User::factory()->create($attributes = ['isAdmin' => 1]);
         
         Storage::fake('avatars');
@@ -39,6 +39,43 @@ class PokemonTest extends TestCase
     
         Storage::disk('avatars')->assertMissing($file->hashName());
 
-       $response->assertRedirect('/'); 
+        $response = $this->get('/');
+        $response->assertStatus(200);
+    }
+
+    public function test_edit_pokemon() {
+        $trainer =  User::factory()->create($attributes = ['isAdmin' => 1]);
+        
+        Storage::fake('avatars');
+        $file = UploadedFile::fake()->image('avatars.svg');
+        
+        $response = $this->actingAs($trainer)->post('/rename/1', [
+        'name' => 'Charmander',
+        'type' => 'fogo',
+        'image' => $file,
+        'power' => '10',
+        'attack' => 'Bola de Fogo',
+        'defense' => '10',
+        'healthy' => '25',
+        'weakness' => 4,
+        'weakness_type'=> 'Água',
+        'stars' => 3,
+        'trainer_id' => 1,
+        "pokedex" => 25,
+    ]);
+    
+        Storage::disk('avatars')->assertMissing($file->hashName());
+
+        $response = $this->get('/');
+        $response->assertStatus(200);
+    }
+
+    public function test_delete_pokemon() {
+        $trainer =  User::factory()->create($attributes = ['isAdmin' => 1]);
+        
+        $response = $this->actingAs($trainer)->delete('/release/1');
+        
+        $response = $this->get('/');
+        $response->assertStatus(200);
     }
 }
