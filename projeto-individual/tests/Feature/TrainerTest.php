@@ -16,7 +16,7 @@ class TrainerTest extends TestCase
      */
     public function test_access_route_trainers()
     {
-        $trainer = User::factory()->create($attributes = ['isAdmin' => 1]);
+        $trainer = User::factory()->create($attributes = ["name" => "Trainer Test",'isAdmin' => 1]);
 
         $response = $this->post('/login', [
             'email' => $trainer->email,
@@ -24,24 +24,12 @@ class TrainerTest extends TestCase
             'password_confirmation' => $trainer->password,
         ]);
 
-        $this->actingAs($trainer);
-
-        $response = $this->get('/trainers');
-
-        $response->assertStatus(200);
-    }
-
-    public function test_delete_trainer() {
-        $trainer =  User::factory()->create($attributes = ['isAdmin' => 1]);
-        
-        $response = $this->actingAs($trainer)->delete("/trainer/{$trainer->id}");
-        
-        $response = $this->get('/');
+        $response = $this->actingAs($trainer)->get('/trainers');
         $response->assertStatus(200);
     }
 
     public function test_edit_trainer() {
-        $trainer =  User::factory()->create($attributes = ['isAdmin' => 1]);
+        $trainer = User::where('isAdmin', 1)->first();
         
         $response = $this->actingAs($trainer)->put("/trainer/{$trainer->id}", [
             'name' => 'João',
@@ -50,13 +38,20 @@ class TrainerTest extends TestCase
         $response = $this->get('/');
         $response->assertStatus(200);
     }
-
+    
     public function test_access_route_trainer_perfil() {
-        $trainer =  User::factory()->create($attributes = ['isAdmin' => 1]);
+        $trainer = User::where('isAdmin', 1)->first();
         
         $response = $this->actingAs($trainer)->get("/trainer/perfil/{$trainer->id}");
-        
         $response->assertStatus(200);
     }
     
+    public function test_delete_trainer() {
+        $trainer = User::where('isAdmin', 1)->first();
+        
+        $this->actingAs($trainer)->delete("/trainer/{$trainer->id}");
+        
+        $response = $this->get('/');
+        $response->assertStatus(200);
+    }
 }
