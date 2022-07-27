@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Pokemon;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -72,8 +73,9 @@ class PokemonTest extends TestCase
 
     public function test_delete_pokemon() {
         $trainer = User::where('isAdmin', 1)->first();
+        $pokemon_id = $trainer->pokemons()->first()->id;
         
-        $response = $this->actingAs($trainer)->delete('/release/1');
+        $response = $this->actingAs($trainer)->delete("/release/{$pokemon_id}");
         
         User::destroy($trainer->id);
         
