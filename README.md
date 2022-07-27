@@ -14,9 +14,9 @@
 
 ### Descrição
 
-O usuário pode criar cartas de pokémons.
-Apenas o usuário que criou a carta poderá alterá-la ou deletá-la.
-Projeto contém uma página para visualizar os treinadores (usuários) e uma página para visualizar os pokémons.
-Apenas o Administrador tem acesso a página de treinadores, local onde é possível editar e deletar treinadores.
-O usuário pode alterar seus dados pelo menu de perfil.
-O projeto contém 38.0% de testes realizados sem contar os de autenticação e 66.8% incluindo os de autenticação.
+-   O usuário pode criar cartas de pokémons.
+-   Apenas o usuário que criou a carta poderá alterá-la ou deletá-la.
+-   Projeto contém uma página para visualizar os treinadores (usuários) e uma página para visualizar os pokémons.
+-   Apenas o Administrador tem acesso a página de treinadores, local onde é possível editar e deletar treinadores.
+-   O usuário pode alterar seus dados pelo menu de perfil.
+-   O projeto contém 38.0% de testes realizados sem contar os de autenticação e 66.8% incluindo os de autenticação.
