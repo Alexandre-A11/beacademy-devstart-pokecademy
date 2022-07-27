@@ -20,3 +20,5 @@
 -   Apenas o Administrador tem acesso a página de treinadores, local onde é possível editar e deletar treinadores.
 -   O usuário pode alterar seus dados pelo menu de perfil.
 -   O projeto contém 38.0% de testes realizados sem contar os de autenticação e 66.8% incluindo os de autenticação.
+
+<img src="./pokecademy.png" />
