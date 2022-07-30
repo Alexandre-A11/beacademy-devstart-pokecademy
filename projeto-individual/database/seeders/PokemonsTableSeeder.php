@@ -100,7 +100,7 @@ class PokemonsTableSeeder extends Seeder
                 'defense' => 14,
                 'healthy' => 16,
                 'weakness' => 3,
-                'weakness_type' => 'Életrico',
+                'weakness_type' => 'Elétrico',
                 'stars' => 2,
                 'pokedex_id' => 16,
                 'trainer_id' => User::inRandomOrder()->first()->id
