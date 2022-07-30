@@ -60,9 +60,11 @@
                     @if (request()->routeIs('show.trainers'))
                     @foreach ($trainers as $trainer)
                     @include('layouts.trainer-card')
-                    <!-- Pagination -->
-                    {{ $trainers->links('vendor.pagination.tailwind') }}
                     @endforeach
+                    <!-- Pagination -->
+                    <div class="w-full grid justify-items-center">
+                        {{ $trainers->links('vendor.pagination.tailwind') }}
+                    </div>
                     @endif
 
                     {{-- Trainer Card --}}
@@ -70,6 +72,10 @@
                     @foreach($trainer->pokemons as $pokemon)
                     @include('layouts.pokecard')
                     @endforeach
+                    <!-- Pagination -->
+                    <div class="w-full grid justify-items-center">
+                        {{ $pokemons->links('vendor.pagination.tailwind') }}
+                    </div>
                     @endif
                 </div>
             </div>
