@@ -72,10 +72,6 @@
                     @foreach($trainer->pokemons as $pokemon)
                     @include('layouts.pokecard')
                     @endforeach
-                    <!-- Pagination -->
-                    <div class="w-full grid justify-items-center">
-                        {{ $pokemons->links('vendor.pagination.tailwind') }}
-                    </div>
                     @endif
                 </div>
             </div>

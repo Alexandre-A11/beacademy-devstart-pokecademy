@@ -22,7 +22,7 @@ class PokemonController extends Controller
         $data = $request->all();
         $data['trainer_id'] = auth()->user()->id;
         $data['pokedex_id'] = $request['pokedex'];
-        $data['image'] = $request->file('image')->store('pokemon', 'public');
+        $data['image'] = $request->file('image')->store('pokemons', 'public');
         
         $this->pokemon->create($data);
         
@@ -38,7 +38,7 @@ class PokemonController extends Controller
         $data = $request->all();
         
         if ($request->image){
-            $data['image'] = $request->file('image')->store('pokemon', 'public');
+            $data['image'] = $request->file('image')->store('pokemons', 'public');
         }
 
         if ($request->type){
