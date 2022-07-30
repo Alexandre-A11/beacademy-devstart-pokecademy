@@ -29,7 +29,7 @@ class PokemonsTableSeeder extends Seeder
             'defense' => 18,
             'healthy' => 25,
             'weakness' => 3,
-            'weakness_type' => 'Fire',
+            'weakness_type' => 'Fogo',
             'stars' => 3,
             'pokedex_id' => 1,
             'trainer_id' => User::inRandomOrder()->first()->id,
