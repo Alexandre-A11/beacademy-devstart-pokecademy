@@ -3,7 +3,7 @@
         <div class="flex flex-wrap justify-center">
             <div class="w-full flex justify-center mt-6">
                 <div class="relative">
-                    <img src="{{ asset("storage/{$trainer->image}") }}" class="rounded-full w-40 h-40 object-cover border-4 border-secondary" />
+                    <img src="{{ asset("https://pokecademy.s3.amazonaws.com/{$trainer->image}") }}" class="rounded-full w-40 h-40 object-cover border-4 border-secondary" />
                 </div>
             </div>
             <div class="w-full text-center">

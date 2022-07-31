@@ -6,6 +6,7 @@ use App\Http\Requests\PokemonCapture;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Storage;
 
 class PokemonController extends Controller
 {
@@ -39,6 +40,7 @@ class PokemonController extends Controller
         
         if ($request->image){
             $data['image'] = $request->file('image')->store('pokemons', 'public');
+            Storage::disk('s3')->put($data['image'], file_get_contents($request->image));
         }
 
         if ($request->type){

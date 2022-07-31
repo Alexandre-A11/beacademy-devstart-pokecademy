@@ -6,6 +6,7 @@ use App\Http\Requests\TrainerUpdate;
 use App\Models\Pokemon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TrainerController extends Controller
 {
@@ -30,6 +31,7 @@ class TrainerController extends Controller
         $data = $request->except('password');
         if ($request->hasFile('image')){
             $data['image'] = $request->file('image')->store('trainers', 'public');
+            Storage::disk('s3')->put($data['image'], file_get_contents($request->image));
         }
         
         if ($request->password){
