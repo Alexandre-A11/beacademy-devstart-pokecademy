@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img class="w-20 fill-current text-gray-500" src="../storage/logo.png" />
+                <img class="w-20 fill-current text-gray-500" src="https://pokecademy.s3.amazonaws.com/logo.png" />
             </a>
         </x-slot>
 

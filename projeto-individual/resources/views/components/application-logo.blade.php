@@ -1,1 +1,1 @@
-<img {{ $attributes->merge(['class' => '']) }} src="storage/logo.png" />
+<img {{ $attributes->merge(['class' => '']) }} src="https://pokecademy.s3.amazonaws.com/logo.png" />
