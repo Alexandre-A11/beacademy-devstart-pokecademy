@@ -37,5 +37,5 @@ https://pokecademy.herokuapp.com/
 </details>
 
 <a href="https://pokecademy.herokuapp.com/">
-<img src="./pokecademy.png" />
+<img target="_blank" src="./pokecademy.png" />
 </a>
