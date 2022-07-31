@@ -23,7 +23,8 @@ class PokemonsTableSeeder extends Seeder
             [
             'name' => 'Bulbasaur',
             'type' => 'Planta',
-            'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/1.svg')),
+            // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/1.svg')),
+            'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/1.svg')),
             'power' => 14,
             'attack' => 'Chicote de Cipó',
             'defense' => 18,
