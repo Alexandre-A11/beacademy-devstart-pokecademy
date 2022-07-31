@@ -22,7 +22,7 @@
 -   O projeto contém 38.0% de testes realizados sem contar os de autenticação e 66.8% incluindo os de autenticação.
 
 **Versão Live**
-https://pokecademy.herokuapp.com/
+<a target="_blank" href="https://pokecademy.herokuapp.com/">https://pokecademy.herokuapp.com/</a>
 
 <details>
   <summary>Administrador</summary>
@@ -36,6 +36,6 @@ https://pokecademy.herokuapp.com/
   
 </details>
 
-<a href="https://pokecademy.herokuapp.com/">
-<img target="_blank" src="./pokecademy.png" />
+<a target="_blank" href="https://pokecademy.herokuapp.com/">
+<img src="./pokecademy.png" />
 </a>
