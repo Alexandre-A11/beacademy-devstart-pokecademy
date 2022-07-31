@@ -21,4 +21,9 @@
 -   O usuário pode alterar seus dados pelo menu de perfil.
 -   O projeto contém 38.0% de testes realizados sem contar os de autenticação e 66.8% incluindo os de autenticação.
 
+**Versão Live**
+https://pokecademy.herokuapp.com/
+
+<a href="https://pokecademy.herokuapp.com/">
 <img src="./pokecademy.png" />
+</a>
