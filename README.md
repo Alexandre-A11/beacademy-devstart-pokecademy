@@ -36,6 +36,6 @@
   
 </details>
 
-<a target="_blank" href="https://pokecademy.herokuapp.com/">
+<a href="https://pokecademy.herokuapp.com/" target="_blank">
 <img src="./pokecademy.png" />
 </a>
