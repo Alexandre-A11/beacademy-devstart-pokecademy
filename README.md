@@ -24,8 +24,17 @@
 **Versão Live**
 https://pokecademy.herokuapp.com/
 
-Administrador: john.doe@email.com
-Senha: 12345678
+<details>
+  <summary>Administrador</summary>
+    <p>
+        <strong>Login:</strong>
+        <code>john.doe@email.com</code>
+    <br>
+        <strong>Senha:</strong>
+        <code>12345678</code>
+    </p>
+  
+</details>
 
 <a href="https://pokecademy.herokuapp.com/">
 <img src="./pokecademy.png" />
