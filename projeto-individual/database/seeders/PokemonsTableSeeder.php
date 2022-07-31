@@ -38,7 +38,8 @@ class PokemonsTableSeeder extends Seeder
             [
                 'name' => 'Charmander',
                 'type' => 'Fogo',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/4.svg')),
+                // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/4.svg')),
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/4.svg')),
                 'power' => 18,
                 'attack' => 'Bola de Fogo',
                 'defense' => 14,
@@ -52,7 +53,8 @@ class PokemonsTableSeeder extends Seeder
                 [
                 'name' => 'Squirtle',
                 'type' => 'Água',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/7.svg')),
+                // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/7.svg')),
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/7.svg')),
                 'power' => 13,
                 'attack' => 'Bolhas',
                 'defense' => 25,
@@ -67,7 +69,8 @@ class PokemonsTableSeeder extends Seeder
                 [
                 'name' => 'Pikachu',
                 'type' => 'Elétrico',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/25.svg')),
+                // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/25.svg')),
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/25.svg')),
                 'power' => 14,
                 'attack' => 'Choque do Trovão',
                 'defense' => 16,
