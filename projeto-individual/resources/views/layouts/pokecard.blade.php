@@ -35,7 +35,7 @@
         <!-- Imagem -->
         <div class="grid justify-items-center h-1/2 pt-5 rounded-md">
             <div class="flex justify-center gap-4 ">
-                <img src="{{ asset('storage/' . $pokemon->image) }}" alt="{{ $pokemon->name }}" class="h-52">
+                <img src="{{ asset('https://pokecademy.s3.amazonaws.com/' . $pokemon->image) }}" alt="{{ $pokemon->name }}" class="h-52">
             </div>
         </div>
 
