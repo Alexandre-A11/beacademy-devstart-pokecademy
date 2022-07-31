@@ -81,7 +81,8 @@ class PokemonsTableSeeder extends Seeder
                 [
                 'name' => 'Caterpie',
                 'type' => 'Inseto',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/10.svg')),
+                // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/10.svg')),
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/10.svg')),
                 'power' => 10,
                 'attack' => 'Seda',
                 'defense' => 10,
@@ -95,7 +96,8 @@ class PokemonsTableSeeder extends Seeder
                 [
                 'name' => 'Pidgey',
                 'type' => 'Voador',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/16.svg')),
+                // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/16.svg')),
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/16.svg')),
                 'power' => 13,
                 'attack' => 'Asas',
                 'defense' => 14,
@@ -109,7 +111,8 @@ class PokemonsTableSeeder extends Seeder
                 [
                 'name' => 'Geodude',
                 'type' => 'Pedra',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/74.svg')),
+                // 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/74.svg')),
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/74.svg')),
                 'power' => 24,
                 'attack' => 'Rochas',
                 'defense' => 40,
@@ -123,7 +126,8 @@ class PokemonsTableSeeder extends Seeder
                 [
                 'name' => 'Gastly',
                 'type' => 'Fantasma',
-                'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/92.svg')),
+                <!-- 'image' => Storage::disk('public')->putFile('pokemons', new File('storage/app/public/svg/92.svg')), -->
+                'image' => Storage::disk('s3')->putFile('pokemons', new File('storage/app/public/svg/92.svg')),
                 'power' => 20,
                 'attack' => 'Língua',
                 'defense' => 15,
