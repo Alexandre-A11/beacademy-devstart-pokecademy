@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -45,9 +46,13 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'image' => $request->image ? $request->image->store('trainers', 'public') : null,
+            'image' => $request->image ? $request->image->store('trainers', 'public'): null,
+            
         ]);
 
+        if ($request->image){
+            Storage::disk('s3')->put($user->image, file_get_contents($request->image));
+        }
 
         event(new Registered($user));
 
