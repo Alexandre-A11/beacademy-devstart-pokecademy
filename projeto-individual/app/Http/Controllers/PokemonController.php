@@ -59,6 +59,7 @@ class PokemonController extends Controller
             return redirect()->route('dashboard')->with('error', 'Pokémon não encontrado');
         };
         
+        Storage::disk('s3')->delete($pokemon->image);
         $pokemon->delete();
         return redirect()->route('dashboard');
     }

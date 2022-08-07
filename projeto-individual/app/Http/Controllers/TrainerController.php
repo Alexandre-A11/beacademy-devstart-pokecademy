@@ -54,11 +54,14 @@ class TrainerController extends Controller
     }
 
     public function delete($id){
-        if ($this->user->find($id)->pokemons->count() > 0){
+        $trainer = $this->user->find($id);
+        
+        if ($trainer->pokemons->count() > 0){
             return redirect()->route('show.trainers')->with('error', 'Não é possível excluir um treinador que possui Pokémons!');
         }
-        
-        $this->user->find($id)->delete();
+
+        Storage::disk('s3')->delete($trainer->image);
+        $trainer->delete();
 
         return redirect()->route('show.trainers')->with('success', 'Treinador deletado com sucesso!');
     }
